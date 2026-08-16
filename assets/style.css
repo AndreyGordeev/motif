@@ -1,0 +1,93 @@
+/* Motif site — one stylesheet for the three pages the App Store listing points at
+   (marketing / privacy / support). Lifted from docs/store/privacy-policy.html so the
+   hosted pages and the tracked policy read as one thing. */
+:root {
+  --bg: #fbfbfd;
+  --panel: #ffffff;
+  --ink: #14161f;
+  --muted: #565b6b;
+  --line: #e6e7ee;
+  --accent: #0e7490;
+  --accent-2: #a21caf;
+  --maxw: 42rem;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0a0e18;
+    --panel: #10151f;
+    --ink: #e9ebf2;
+    --muted: #9aa1b4;
+    --line: #1f2634;
+    --accent: #22d3ee;
+    --accent-2: #e879f9;
+  }
+}
+:root[data-theme="light"] {
+  --bg: #fbfbfd; --panel: #ffffff; --ink: #14161f; --muted: #565b6b;
+  --line: #e6e7ee; --accent: #0e7490; --accent-2: #a21caf;
+}
+:root[data-theme="dark"] {
+  --bg: #0a0e18; --panel: #10151f; --ink: #e9ebf2; --muted: #9aa1b4;
+  --line: #1f2634; --accent: #22d3ee; --accent-2: #e879f9;
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font: 16px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+.wrap { max-width: var(--maxw); margin: 0 auto; padding: 3.5rem 1.25rem 4rem; }
+
+header { display: flex; align-items: baseline; gap: .6rem; margin-bottom: .25rem; }
+.brand {
+  font-size: 1.05rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase;
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+  text-decoration: none;
+}
+.kind { font-size: .8rem; color: var(--muted); letter-spacing: .04em; }
+
+h1 {
+  font-size: clamp(1.9rem, 4.5vw, 2.6rem);
+  line-height: 1.1; text-wrap: balance;
+  margin: 1.1rem 0 .35rem; letter-spacing: -.01em;
+}
+.updated { color: var(--muted); font-size: .9rem; margin: 0 0 2rem; }
+
+.lede {
+  font-size: 1.05rem; color: var(--ink);
+  border-left: 3px solid var(--accent); padding-left: 1rem; margin: 0 0 2.4rem;
+}
+
+h2 {
+  font-size: 1.15rem; margin: 2.4rem 0 .6rem; letter-spacing: -.005em;
+  padding-top: 1.4rem; border-top: 1px solid var(--line);
+}
+h2:first-of-type { border-top: 0; padding-top: 0; }
+h3 { font-size: 1rem; margin: 1.6rem 0 .3rem; }
+p { margin: .7rem 0; }
+strong { color: var(--ink); }
+a { color: var(--accent); }
+
+.none {
+  display: inline-block; font-weight: 700; color: var(--accent);
+  letter-spacing: .02em;
+}
+.card {
+  background: var(--panel); border: 1px solid var(--line);
+  border-radius: 12px; padding: 1rem 1.15rem; margin: 1rem 0;
+}
+ul { margin: .6rem 0; padding-left: 1.15rem; }
+li { margin: .4rem 0; }
+
+nav.pages { margin: 2.4rem 0 0; display: flex; flex-wrap: wrap; gap: .9rem; }
+nav.pages a { font-size: .92rem; }
+
+footer {
+  margin-top: 3rem; padding-top: 1.4rem; border-top: 1px solid var(--line);
+  color: var(--muted); font-size: .88rem;
+}
+footer a { color: var(--accent); word-break: break-all; }
