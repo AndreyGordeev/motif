@@ -1,6 +1,6 @@
-/* Motif site — one stylesheet for the three pages the App Store listing points at
-   (marketing / privacy / support). Lifted from docs/store/privacy-policy.html so the
-   hosted pages and the tracked policy read as one thing. */
+/* Motif site — one stylesheet for the three pages the store listings point at
+   (marketing / privacy / support). privacy/index.html is generated from
+   docs/store/privacy-policy.md and links this file; keep its selectors here. */
 :root {
   --bg: #fbfbfd;
   --panel: #ffffff;
@@ -91,3 +91,7 @@ footer {
   color: var(--muted); font-size: .88rem;
 }
 footer a { color: var(--accent); word-break: break-all; }
+
+/* The privacy policy: one page, an English and a Russian section. */
+section + section { margin-top: 4rem; padding-top: 2rem; border-top: 2px solid var(--line); }
+nav.langs { font-size: .9rem; color: var(--muted); margin: .25rem 0 0; }

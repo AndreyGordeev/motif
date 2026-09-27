@@ -3,85 +3,92 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Motif — Privacy Policy</title>
-<meta name="description" content="Motif collects no personal data. No account, no ads, no analytics, no tracking.">
+<title>Privacy Policy — Motif</title>
+<!-- Generated from docs/store/privacy-policy.md by python -m mobpipe.distribution.store_compliance.policy_html - do not edit by hand. -->
 <link rel="stylesheet" href="../assets/style.css">
 </head>
 <body>
 <div class="wrap">
+<section lang="en" id="en">
   <header>
     <a class="brand" href="../">Motif</a>
     <span class="kind">Icon &amp; Widget Themes</span>
   </header>
-
-  <h1>Privacy Policy</h1>
-  <p class="updated">Last updated: 16 August 2026</p>
-
-  <p class="lede">
-    Motif is a storefront of pre-designed home-screen theme packs — icons,
-    wallpapers, lock-screen art and widgets. It is built to keep everything on
-    your device, with the one optional exception described below.
-  </p>
-
-  <h2>Data we collect</h2>
-  <p>
-    Motif collects <span class="none">no personal data</span>, no account data and no
-    usage or analytics data. There is no account, no sign-in, no advertising and no
-    tracking of any kind.
-  </p>
-  <p>One thing does leave your device, and only if you choose to use it:</p>
-  <div class="card">
-    <ul>
-      <li><strong>Your location, for the weather widget.</strong> If you add the weather widget and grant the location permission, the app hands your device's coordinate to a weather provider to fetch the current conditions for your area. The request carries no name, no account and no device identifier — just the coordinate. We operate no server of our own and never receive, store or log your location. Only the last weather reading is cached, on your device.</li>
-      <li><strong>It is optional.</strong> Decline the location permission, or simply do not add the weather widget, and nothing is sent anywhere. The widget then shows an “Enable location” prompt, and every other part of the app works exactly the same.</li>
-      <li><strong>Who the provider is depends on the platform.</strong> On iOS it is <strong>Apple WeatherKit</strong>, part of the operating system: the coordinate is used to service the request in real time, is not retained, and is never accessible to us — which is why the app's App Store privacy label reads “Data Not Collected”. On Android the provider is <strong>WeatherAPI.com</strong>, a third party that receives the coordinate; that is declared as collection and sharing in the app's Google Play Data safety form. Each provider's handling of the request is governed by its own privacy policy.</li>
-      <li>Everything else stays on the device: all theme packs and the catalog are bundled inside the app, and files you unlock are stored only in the app's own on-device storage and shared with your chosen wallpaper picker, launcher or widget app on your device.</li>
-    </ul>
-  </div>
-
+  <nav class="langs"><a href="#ru">Русская версия</a></nav>
+  <h1>Privacy Policy — Motif</h1>
+  <p class="updated">Last updated: 28 September 2026</p>
+  <p>Motif is a storefront of pre-designed home-screen theme packs: icons, wallpapers, lock-screen art and widget themes. There is no account, no sign-in, no advertising, no analytics and no tracking of any kind. Two things leave your device, described below; neither carries your name, an account or a device identifier.</p>
+  <h2>1. Getting a pack you bought</h2>
+  <p>Packs are downloaded to your device after purchase. When you buy a pack, or tap <strong>Restore Purchases</strong>, the app asks our delivery server for it. The server is a <strong>Cloudflare Worker</strong> run by the developer of Motif. To answer, it needs four things, and the app sends exactly these:</p>
+  <ul>
+    <li><strong>the signed purchase record</strong> your store issued for the pack — Apple's signed transaction on iPhone, Google Play's signed purchase on Android. It says which pack was bought and when;</li>
+    <li><strong>the pack id</strong> of the pack you want;</li>
+    <li><strong>the platform</strong> — iOS or Android;</li>
+    <li><strong>the app version</strong>, so the server offers a copy of the pack your version can open.</li>
+  </ul>
+  <p><strong>Why:</strong> the server checks the purchase — it verifies the store's signature — and only when the purchase is valid does it answer with a short-lived link to download the pack.</p>
+  <p><strong>What happens to it:</strong> the purchase is checked while the server answers and then discarded. It is <strong>not stored</strong> and <strong>not logged</strong>: the server writes none of it to any storage or to its log. For each request the server's technical log keeps only the kind of request, its result, the pack id and the platform — nothing that identifies you or your purchase — and Cloudflare keeps that log for a few days. Cloudflare carries the connection as our hosting provider, under its own privacy policy.</p>
+  <p>The app also reads the pack catalog, covers and previews from the same server. Those requests send nothing about you.</p>
+  <h2>2. Your location, for the weather widget (optional)</h2>
+  <p>If you add the weather widget and grant the location permission, the app sends your device's coordinate to the weather provider to fetch the current conditions for your area, and shows the result. The request carries no name, no account and no device identifier — just the coordinate. It goes straight to the provider: it never reaches our server, and we never receive, store or log your location. Only the last weather reading is cached, on your device.</p>
+  <p>Decline the location permission, or simply do not add the weather widget, and nothing is sent. The widget then shows an "Enable location" prompt, and every other part of the app works the same. On Android the provider is <strong>WeatherAPI.com</strong>; on iPhone it is <strong>Apple WeatherKit</strong>, part of the operating system. Each provider handles the request under its own privacy policy.</p>
   <h2>Purchases</h2>
-  <p>
-    A pack is unlocked by a one-time in-app purchase. On iOS the purchase is
-    processed by <strong>Apple</strong> and verified on your device by the App
-    Store (StoreKit); on Android it is processed by <strong>Google Play
-    Billing</strong> and verified on your device by Google Play. Motif never sees
-    or stores your payment details and sends no purchase data to any server we
-    operate. Apple's and Google's handling of payment data is governed by their
-    own privacy policies.
-  </p>
-
+  <p>Payments are processed by the <strong>App Store</strong> on iPhone and by <strong>Google Play</strong> on Android. Motif never sees or stores your payment details. Apart from the check described in section 1, which needs the store's signed purchase record, the purchase stays with your store; the store's handling of it is governed by its own privacy policy.</p>
   <h2>Data sharing</h2>
-  <p>
-    The only data that reaches anyone else is the coordinate handed to the weather
-    provider described above, and only while you use the weather widget. It is used
-    solely to answer that request. We share nothing else, and we sell nothing to
-    anyone.
-  </p>
-
+  <p>The only data that reaches a third party is the coordinate sent to the weather provider, and only while you use the weather widget. The purchase record goes to our own delivery server, hosted by Cloudflare as our service provider, and to no one else. We sell nothing to anyone.</p>
   <h2>Data deletion</h2>
-  <p>
-    There is nothing for us to delete: we operate no server and keep no copy of your
-    location or any other data about you. Uninstalling the app removes all on-device
-    files it created, including the cached weather reading.
-  </p>
-
+  <p>There is nothing on our side to delete: the purchase record is discarded once it is checked, and your location never reaches us. Uninstalling the app removes everything it created on your device, including the downloaded packs and the cached weather reading.</p>
   <h2>Children</h2>
   <p>Motif is a general-audience customization tool and is not directed to children.</p>
-
   <h2>Changes</h2>
-  <p>
-    If this policy changes, the updated version will be posted at this URL with a new
-    “Last updated” date.
-  </p>
-
+  <p>If this policy changes, the updated version will be posted at this address with a new "Last updated" date.</p>
+  <h2>Contact</h2>
+  <p><a href="mailto:andreiy.gordeev@gmail.com">andreiy.gordeev@gmail.com</a></p>
   <nav class="pages">
     <a href="../">Home</a>
     <a href="../support/">Support</a>
   </nav>
-
-  <footer>
-    <p><strong>Contact:</strong> <a href="mailto:andreiy.gordeev@gmail.com">andreiy.gordeev@gmail.com</a></p>
-  </footer>
+</section>
+<section lang="ru" id="ru">
+  <header>
+    <a class="brand" href="../">Motif</a>
+    <span class="kind">Темы иконок и виджетов</span>
+  </header>
+  <nav class="langs"><a href="#en">English version</a></nav>
+  <h1>Политика конфиденциальности — Motif</h1>
+  <p class="updated">Обновлено: 28 сентября 2026</p>
+  <p>Motif — витрина готовых тем для главного экрана: иконки, обои, картинки для экрана блокировки и темы виджетов. Здесь нет аккаунта, входа, рекламы, аналитики и никакого отслеживания. С вашего устройства уходят две вещи, о них ниже; ни одна не несёт ваше имя, аккаунт или идентификатор устройства.</p>
+  <h2>1. Как вы получаете купленный набор</h2>
+  <p>Наборы скачиваются на устройство после покупки. Когда вы покупаете набор или нажимаете <strong>«Восстановить покупки»</strong>, приложение запрашивает его у нашего сервера выдачи. Этот сервер — <strong>Cloudflare Worker</strong> разработчика Motif. Чтобы ответить, ему нужны четыре вещи, и приложение отправляет ровно их:</p>
+  <ul>
+    <li><strong>подписанную запись о покупке</strong>, которую ваш магазин выдал на этот набор, — подписанную транзакцию Apple на iPhone и подписанную покупку Google Play на Android. В ней сказано, какой набор куплен и когда;</li>
+    <li><strong>идентификатор набора</strong>, который вы хотите получить;</li>
+    <li><strong>платформу</strong> — iOS или Android;</li>
+    <li><strong>версию приложения</strong>, чтобы сервер предложил копию набора, которую ваша версия откроет.</li>
+  </ul>
+  <p><strong>Зачем:</strong> сервер проверяет покупку — сверяет подпись магазина — и только если покупка действительна, отвечает короткоживущей ссылкой на скачивание набора.</p>
+  <p><strong>Что с этим происходит:</strong> покупка проверяется, пока сервер отвечает, и после этого отбрасывается. Она <strong>не хранится</strong> и <strong>не пишется в журнал</strong>: сервер не записывает её ни в какое хранилище и ни в свой журнал. Про каждый запрос технический журнал сервера оставляет только вид запроса, его итог, идентификатор набора и платформу — ничего, что указывает на вас или на вашу покупку, — и Cloudflare держит этот журнал несколько дней. Соединение проводит Cloudflare как наш хостинг-провайдер, по своей политике конфиденциальности.</p>
+  <p>С того же сервера приложение читает каталог наборов, обложки и превью. Эти запросы ничего не сообщают о вас.</p>
+  <h2>2. Ваше местоположение для виджета погоды (по желанию)</h2>
+  <p>Если вы добавите виджет погоды и разрешите доступ к местоположению, приложение отправит координату устройства поставщику погоды, чтобы узнать текущую погоду в вашем районе, и покажет результат. В запросе нет имени, аккаунта и идентификатора устройства — только координата. Она идёт напрямую поставщику: до нашего сервера она не доходит, и мы никогда не получаем, не храним и не записываем в журнал ваше местоположение. На устройстве кэшируется только последнее показание погоды.</p>
+  <p>Откажите в доступе к местоположению или просто не добавляйте виджет погоды — и ничего не отправится. Виджет тогда покажет просьбу включить местоположение, а всё остальное в приложении работает так же. На Android поставщик — <strong>WeatherAPI.com</strong>, на iPhone — <strong>Apple WeatherKit</strong>, часть операционной системы. Каждый поставщик обрабатывает запрос по своей политике конфиденциальности.</p>
+  <h2>Покупки</h2>
+  <p>Оплату проводит <strong>App Store</strong> на iPhone и <strong>Google Play</strong> на Android. Motif никогда не видит и не хранит ваши платёжные данные. Кроме проверки из раздела 1, которой нужна подписанная запись магазина о покупке, покупка остаётся у вашего магазина; как он её обрабатывает, определяет его собственная политика конфиденциальности.</p>
+  <h2>Передача данных</h2>
+  <p>Третьему лицу попадает только координата, отправленная поставщику погоды, и только пока вы пользуетесь виджетом погоды. Запись о покупке уходит на наш собственный сервер выдачи, который размещён у Cloudflare как у нашего поставщика услуг, и больше никому. Мы ничего никому не продаём.</p>
+  <h2>Удаление данных</h2>
+  <p>С нашей стороны удалять нечего: запись о покупке отбрасывается после проверки, а ваше местоположение до нас не доходит. Удаление приложения стирает всё, что оно создало на устройстве, включая скачанные наборы и сохранённое показание погоды.</p>
+  <h2>Дети</h2>
+  <p>Motif — инструмент оформления для широкой аудитории и не предназначен специально для детей.</p>
+  <h2>Изменения</h2>
+  <p>Если политика изменится, новая редакция появится по этому адресу с новой датой обновления.</p>
+  <h2>Контакт</h2>
+  <p><a href="mailto:andreiy.gordeev@gmail.com">andreiy.gordeev@gmail.com</a></p>
+  <nav class="pages">
+    <a href="../">Главная</a>
+    <a href="../support/">Поддержка</a>
+  </nav>
+</section>
 </div>
 </body>
 </html>
